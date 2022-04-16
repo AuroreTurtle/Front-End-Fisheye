@@ -6,7 +6,7 @@ async function getPhotographers() {
   // utilisation de await car fonction async
   const photographers = await fetch("./data/photographers.json");
   // console.log(photographers);
-  return await photographers.json();
+  return photographers.json();
 }
 
 /* A function that takes the photographers array and displays it on the page. */
