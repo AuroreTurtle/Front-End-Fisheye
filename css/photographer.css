@@ -2,12 +2,115 @@
     display: none;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+.fa-heart {
+    margin-left: 5px;
 }
 
+/* Profile */
+.photograph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+    height: 300px;
+    margin: 0 100px;
+    padding: 0 3% 0 3%;
+    border-radius: 5px;
+}
+
+.photograph-header img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.info-profile {
+    justify-self: flex-start;
+}
+
+.info-profile h1 {
+    color: #d3573c;
+    font-size: 64px;
+    line-height: 83px;
+    margin: 0;
+}
+
+.info-profile h2 {
+    color: #901c1c;
+    font-size: 24px;
+    line-height: 31px;
+    margin: 2% 0 2% 0;
+}
+
+.info-profile p {
+    font-size: 18px;
+}
+
+/* En bas de la page : nombre de likes et prix journalier */
+.info-prix {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #db8876;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.info-prix .prix {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+
+.info-prix .fa-heart {
+    font-size: 24px;
+}
+
+/* Galerie d'image */
+.galery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.galery article {
+    width: 350px;
+    height: 300px;
+    margin-bottom: 10%;
+}
+
+.galery img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.galery video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-media {
+    display: flex;
+    justify-content: space-between;
+    color: #901c1c;
+    font-size: 24px;
+}
+
+.info-media .titre {
+    margin: 0;
+    width: 80%;
+}
+
+/* Modale et form */
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -16,14 +119,14 @@
     width: 170px;
     height: 70px;
     border: none;
-    background-color: #901C1C;
+    background-color: #901c1c;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .modal {
     border-radius: 5px;
-    background-color: #DB8876;
+    background-color: #db8876;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -56,7 +159,7 @@ form {
 }
 
 form label {
-    color: #312E2E;
+    color: #312e2e;
     font-size: 36px;
 }
 

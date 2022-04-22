@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img src="assets/images/logo.png" class="logo"  alt="Fisheye Home page"/>
-      </a>
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form" />
+    <head>
+        <meta charset="utf-8" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/48b30f5d9d.js" crossorigin="anonymous"></script>
+        <title>Fisheye - photographe</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html">
+                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+            </a>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <!--Factory-->
-    <script src="scripts/factories/mediaFactory.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-    <!--Page-->
-    <script src="scripts/pages/photographer.js"></script>
-  </body>
+        <main id="main">
+            <div class="photograph-header">
+                <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            </div>
+            <section class="galery"></section>
+        </main>
+        <div id="contact_modal">
+            <div class="modal">
+                <header>
+                    <h2>Contactez-moi</h2>
+                    <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form" />
+                </header>
+                <form>
+                    <div>
+                        <label for="firstname">Prénom</label>
+                        <input type="text" id="firstname" name="firstname" />
+
+                        <label for="lastname">Nom</label>
+                        <input type="text" id="lastname" name="lastname" />
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" />
+
+                        <label for="message">Votre message </label>
+                        <input type="text" id="message" name="message" />
+                        <!-- <textarea rows="10" cols="95"></textarea> -->
+                    </div>
+                    <button class="contact_button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+        <!--Factory-->
+        <script src="scripts/factories/mediaFactory.js"></script>
+        <script src="scripts/factories/profileFactory.js"></script>
+        <!--Utils-->
+        <script src="/scripts/utils/contactForm.js"></script>
+        <!--Page-->
+        <!-- <script src="scripts/pages/index.js"></script> -->
+        <script src="scripts/pages/photographer.js"></script>
+    </body>
 </html>
