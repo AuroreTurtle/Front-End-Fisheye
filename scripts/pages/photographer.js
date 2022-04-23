@@ -1,10 +1,6 @@
 //Mettre le code JavaScript lié à la page photographer.html
 
-// import { getData } from "index.js";
-// const jsonData = getData();
-
 async function getData() {
-    // utilisation de await car fonction async
     const response = await fetch("./data/photographers.json");
     return await response.json();
 }
@@ -28,17 +24,13 @@ async function displayMedia(medias) {
 }
 
 async function displayProfile(photographers) {
-    const profileSection = document.querySelector(".photograph-header");
-
-    // message d'erreur avec forEach (mais fonctionne) chercher une autre méthode
+    // a améliorer
     photographers.forEach((photographer) => {
         const profileModel = profileFactory(photographer);
         // console.log(profileModel.id);
         const profile = getPhotographerId();
-        // console.log(profile);
         if (profileModel.id === profile) {
-            const profileCardDOM = profileModel.getProfileCardDOM();
-            profileSection.appendChild(profileCardDOM);
+            profileModel.getProfileCardDOM();
         }
     });
 }

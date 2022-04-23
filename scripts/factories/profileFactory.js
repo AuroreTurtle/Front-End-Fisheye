@@ -36,16 +36,15 @@ function profileFactory(data) {
         const iconeCoeur = document.createElement("i");
         iconeCoeur.className = "fa-solid fa-heart";
 
-        profile.insertBefore(divProfile, button);
         divProfile.appendChild(h1);
         divProfile.appendChild(h2);
         divProfile.appendChild(pTag);
-        profile.appendChild(divImage);
         divImage.appendChild(img);
-        profile.appendChild(divPrix);
         divPrix.appendChild(iconeCoeur);
         divPrix.appendChild(pPrix);
-        return profile;
+        profile.appendChild(divImage);
+        profile.appendChild(divPrix);
+        profile.insertBefore(divProfile, button);
     }
 
     return { id, getProfileCardDOM };
