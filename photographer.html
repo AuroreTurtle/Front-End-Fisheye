@@ -4,45 +4,111 @@
         <meta charset="utf-8" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
-        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/48b30f5d9d.js" crossorigin="anonymous"></script>
+        <link
+            href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/48b30f5d9d.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Fisheye - photographe</title>
     </head>
 
     <body>
         <header>
             <a href="index.html">
-                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+                <img
+                    src="assets/images/logo.png"
+                    class="logo"
+                    alt="Fisheye Home page"
+                />
             </a>
         </header>
         <main id="main">
             <div class="photograph-header">
-                <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+                <button class="contact_button" onclick="displayModal()">
+                    Contactez-moi
+                </button>
             </div>
             <section class="galery"></section>
         </main>
-        <div id="contact_modal">
-            <div class="modal">
+
+        <!--Formulaire-->
+        <div id="contact_modal" aria-hidden="true">
+            <div class="modal" aria-labelledby="Contact">
                 <header>
-                    <h2>Contactez-moi</h2>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form" />
+                    <h2 id="Contact">
+                        Contactez-moi <span id="nom-photographe"></span>
+                    </h2>
+                    <img
+                        src="assets/icons/close.svg"
+                        onclick="closeModal()"
+                        alt="Close Contact form"
+                    />
                 </header>
-                <form>
+                <form name="contact">
                     <div>
-                        <label for="firstname">Prénom</label>
-                        <input type="text" id="firstname" name="firstname" />
-
-                        <label for="lastname">Nom</label>
-                        <input type="text" id="lastname" name="lastname" />
-
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" />
-
-                        <label for="message">Votre message </label>
-                        <input type="text" id="message" name="message" />
-                        <!-- <textarea rows="10" cols="95"></textarea> -->
+                        <label for="firstname" id="First name">Prénom</label>
+                        <input
+                            type="text"
+                            id="firstname"
+                            name="firstname"
+                            aria-labelledby="First name"
+                            aria-required="true"
+                        />
+                        <p class="message-error">
+                            Veuillez mettre au moins 2 caractères alphabétiques
+                        </p>
                     </div>
-                    <button class="contact_button">Envoyer</button>
+
+                    <div>
+                        <label for="lastname" id="Last name">Nom</label>
+                        <input
+                            type="text"
+                            id="lastname"
+                            name="lastname"
+                            aria-labelledby="Last name"
+                            aria-required="true"
+                        />
+                        <p class="message-error">
+                            Veuillez mettre au moins 2 caractères alphabétiques
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="email" id="Email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            aria-labelledby="Email"
+                            aria-required="true"
+                        />
+                        <p class="message-error">
+                            Veuillez renseigner un mail
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="message" id="Your message">
+                            Votre message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="7"
+                            cols="38"
+                            aria-labelledby="Your message"
+                            aria-required="true"
+                        ></textarea>
+                        <p class="message-error">
+                            Veuillez écrire votre message
+                        </p>
+                    </div>
+                    <button class="contact_button" type="submit" value="Send">
+                        Envoyer
+                    </button>
                 </form>
             </div>
         </div>

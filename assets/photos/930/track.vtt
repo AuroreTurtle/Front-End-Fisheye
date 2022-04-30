@@ -1,0 +1,11 @@
+WEBVTT - Ce fichier possède des répliques.
+
+STYLE
+::cue {
+    background-color: rgba(0, 0, 0, 0.279);
+    color: white;
+}
+
+1
+00:00:00.000 --> 00:00:13.000 
+[pas de son] Jeune fille faisant de la gym

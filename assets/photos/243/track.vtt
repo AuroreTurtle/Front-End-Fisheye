@@ -1,0 +1,11 @@
+WEBVTT
+
+STYLE
+::cue {
+    background-color: rgba(0, 0, 0, 0.279);
+    color: white;
+}
+
+1
+00:00:00.000 --> 00:00:16.000 
+[pas de son] Chevaux galopant dans les montagnes

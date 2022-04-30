@@ -18,8 +18,13 @@ function mediaFactory(data) {
             const source = document.createElement("source");
             source.setAttribute("src", videoLien);
             source.setAttribute("type", "video/mp4");
+            const track = document.createElement("track");
+            track.setAttribute("default", true);
+            track.setAttribute("src", `assets/photos/${photographerId}/track.vtt`);
+            track.setAttribute("kind", "captions");
             article.appendChild(videos);
             videos.appendChild(source);
+            videos.appendChild(track);
         }
 
         const div = document.createElement("div");
