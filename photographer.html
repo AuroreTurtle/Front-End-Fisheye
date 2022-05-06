@@ -45,6 +45,7 @@
                         src="assets/icons/close.svg"
                         onclick="closeModal()"
                         alt="Close Contact form"
+                        aria-label="Fermer"
                     />
                 </header>
                 <form name="contact">
@@ -85,9 +86,7 @@
                             aria-labelledby="Email"
                             aria-required="true"
                         />
-                        <p class="message-error">
-                            Veuillez renseigner un mail
-                        </p>
+                        <p class="message-error">Veuillez renseigner un mail</p>
                     </div>
 
                     <div>
@@ -98,7 +97,6 @@
                             id="message"
                             name="message"
                             rows="7"
-                            cols="38"
                             aria-labelledby="Your message"
                             aria-required="true"
                         ></textarea>
@@ -113,11 +111,37 @@
             </div>
         </div>
 
+        <!--Lightbox-->
+        <div class="lightbox" aria-label="Image closeup view" role="dialog">
+            <div class="lightbox__content">
+                <button class="lightbox__close" aria-label="Close dialog">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <button class="lightbox__prev" aria-label="Previous image">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+
+                <div>
+                    <img class="lightbox__image" />
+                    <video controls class="lightbox__video">
+                        <track />
+                    </video>
+                    <p class="lightbox__titre"></p>
+                </div>
+
+                <button class="lightbox__next" aria-label="Next image">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+
         <!--Factory-->
         <script src="scripts/factories/mediaFactory.js"></script>
         <script src="scripts/factories/profileFactory.js"></script>
         <!--Utils-->
         <script src="/scripts/utils/contactForm.js"></script>
+        <script src="/scripts/utils/Lightbox.js"></script>
         <!--Page-->
         <script src="scripts/pages/photographer.js"></script>
     </body>

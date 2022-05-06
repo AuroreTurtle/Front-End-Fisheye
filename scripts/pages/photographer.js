@@ -23,6 +23,26 @@ async function displayMedia(medias) {
     });
 }
 
+async function displayLightbox(medias) {
+    const profile = getPhotographerId();
+
+    let listeElement = [];
+    for (const element in medias) {
+        if (medias[element].photographerId === profile) {
+            listeElement.push(medias[element]);
+            // console.log(listeElement);
+        }
+    }
+
+    let lightbox = new Lightbox(listeElement);
+
+    document.querySelectorAll(".galery article").forEach((mediaDom) => {
+        mediaDom.addEventListener("click", (e) => {
+            lightbox.show(e.currentTarget.dataset.id);
+        });
+    });
+}
+
 async function displayProfile(photographers) {
     // a améliorer
     photographers.forEach((photographer) => {
@@ -38,6 +58,7 @@ async function displayProfile(photographers) {
 async function init() {
     const { media, photographers } = await getData();
     displayMedia(media);
+    displayLightbox(media);
     displayProfile(photographers);
 }
 

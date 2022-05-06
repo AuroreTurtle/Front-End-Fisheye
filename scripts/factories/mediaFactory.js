@@ -1,8 +1,10 @@
 function mediaFactory(data) {
-    const { photographerId, image, video, likes, title } = data;
+    const { photographerId, image, video, likes, title, id } = data;
 
     function getMediaCardDOM() {
         const article = document.createElement("article");
+        article.setAttribute("data-id", id);
+        article.setAttribute("tabindex", "0");
 
         if (image) {
             const imageLien = `assets/photos/${photographerId}/${image}`;
@@ -13,18 +15,9 @@ function mediaFactory(data) {
         } else {
             const videoLien = `assets/photos/${photographerId}/${video}`;
             const videos = document.createElement("video");
-            videos.controls = true;
             videos.setAttribute("title", title);
-            const source = document.createElement("source");
-            source.setAttribute("src", videoLien);
-            source.setAttribute("type", "video/mp4");
-            const track = document.createElement("track");
-            track.setAttribute("default", true);
-            track.setAttribute("src", `assets/photos/${photographerId}/track.vtt`);
-            track.setAttribute("kind", "captions");
+            videos.setAttribute("src", videoLien);
             article.appendChild(videos);
-            videos.appendChild(source);
-            videos.appendChild(track);
         }
 
         const div = document.createElement("div");
