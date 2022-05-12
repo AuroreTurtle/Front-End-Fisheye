@@ -1,5 +1,9 @@
 .fa-heart {
-    margin-left: 5px;
+    margin-left: 7px;
+}
+
+.fa-heart::before{
+    font-size: 26px;
 }
 
 /* Profile */
@@ -44,7 +48,7 @@
 }
 
 /* En bas de la page : nombre de likes et prix journalier */
-.info-prix {
+.info {
     display: flex;
     justify-content: space-around;
     position: fixed;
@@ -52,17 +56,27 @@
     right: 0;
     background-color: #db8876;
     border-radius: 5px;
-    width: 300px;
+    width: 350px;
+    padding: 1%;
 }
 
-.info-prix .prix {
+.info-prix {
     font-size: 24px;
     font-weight: 500;
     color: #000000;
     margin: 0;
 }
 
-.info-prix .fa-heart {
+.info-like{
+    display: flex;
+}
+
+.like-tot {
+    font-size: 24px;
+    margin: 0;
+}
+
+.info .fa-heart {
     font-size: 24px;
 }
 
@@ -80,17 +94,9 @@
     width: 360px;
     height: 310px;
     margin-bottom: 10%;
-    /* margin-right: 2%; */
 }
 
-.galery img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.galery video {
+.galery-media {
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -107,6 +113,14 @@
 .info-media .titre {
     margin: 0;
     width: 75%;
+}
+
+.coeur {
+    display: flex;
+}
+
+.coeur-nombre {
+    margin: 0;
 }
 
 /* Modale et form */

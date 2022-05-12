@@ -27,11 +27,17 @@ function profileFactory(data) {
         pTag.className = "tag";
         pTag.textContent = tagline;
 
-        const divPrix = document.createElement("div");
-        divPrix.className = "info-prix";
+        const divInfo = document.createElement("div");
+        divInfo.className = "info";
         const pPrix = document.createElement("p");
-        pPrix.className = "prix";
+        pPrix.className = "info-prix";
         pPrix.textContent = `${price}€/jour`;
+
+        const coeur = document.createElement("span");
+        coeur.className = "info-like";
+        coeur.setAttribute("data-id", id);
+        const like = document.createElement("p");
+        like.className = "like-tot";
 
         const iconeCoeur = document.createElement("i");
         iconeCoeur.className = "fa-solid fa-heart";
@@ -40,10 +46,12 @@ function profileFactory(data) {
         divProfile.appendChild(h2);
         divProfile.appendChild(pTag);
         divImage.appendChild(img);
-        divPrix.appendChild(iconeCoeur);
-        divPrix.appendChild(pPrix);
+        divInfo.appendChild(coeur);
+        coeur.appendChild(like);
+        coeur.appendChild(iconeCoeur);
+        divInfo.appendChild(pPrix);
         profile.appendChild(divImage);
-        profile.appendChild(divPrix);
+        profile.appendChild(divInfo);
         profile.insertBefore(divProfile, button);
     }
 

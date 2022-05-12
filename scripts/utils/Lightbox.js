@@ -48,12 +48,6 @@ class Lightbox {
             this.close();
         });
 
-        document.querySelector(".lightbox").addEventListener("click", (e) => {
-            if (e.target == e.currentTarget) {
-                this.close();
-            }
-        });
-
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape" || e.key === "Esc") {
                 this.close();
