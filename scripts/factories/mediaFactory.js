@@ -29,15 +29,16 @@ function mediaFactory(data) {
         div.className = "info-media";
 
         const titre = document.createElement("p");
-        titre.className = "titre";
+        titre.className = "title";
+        titre.setAttribute("tabindex", "0");
         titre.textContent = title;
 
         const coeur = document.createElement("span");
-        coeur.className = "coeur";
+        coeur.className = "like";
         coeur.setAttribute("data-id", id);
         coeur.setAttribute("tabindex", "0");
         const like = document.createElement("p");
-        like.className = "coeur-nombre";
+        like.className = "like_number";
         like.setAttribute("data-id", id);
 
         like.textContent = likes;

@@ -36,15 +36,15 @@ class Lightbox {
     }
 
     manageEvent() {
-        document.querySelector(".lightbox__next").addEventListener("click", () => {
+        document.querySelector(".lightbox_next").addEventListener("click", () => {
             this.next();
         });
 
-        document.querySelector(".lightbox__prev").addEventListener("click", () => {
+        document.querySelector(".lightbox_prev").addEventListener("click", () => {
             this.previous();
         });
 
-        document.querySelector(".lightbox__close").addEventListener("click", () => {
+        document.querySelector(".lightbox_close").addEventListener("click", () => {
             this.close();
         });
 
@@ -68,9 +68,9 @@ class Lightbox {
     }
 
     display() {
-        let image = document.querySelector(".lightbox__image");
-        let video = document.querySelector(".lightbox__video");
-        let titre = document.querySelector(".lightbox__titre");
+        let image = document.querySelector(".lightbox_image");
+        let video = document.querySelector(".lightbox_video");
+        let titre = document.querySelector(".lightbox_title");
 
         if (this.currentElement.image) {
             video.style.display = "none";
@@ -84,10 +84,10 @@ class Lightbox {
             image.style.display = "none";
             video.src = `assets/photos/${this.currentElement.photographerId}/${this.currentElement.video}`;
             document
-                .querySelector(".lightbox__video track")
+                .querySelector(".lightbox_video track")
                 .setAttribute("src", `assets/photos/${this.currentElement.photographerId}/track.vtt`);
-            document.querySelector(".lightbox__video track").setAttribute("default", true);
-            document.querySelector(".lightbox__video track").setAttribute("kind", "captions");
+            document.querySelector(".lightbox_video track").setAttribute("default", true);
+            document.querySelector(".lightbox_video track").setAttribute("kind", "captions");
             titre.innerHTML = this.currentElement.title;
             document.querySelector(".lightbox").classList.add("show");
         }

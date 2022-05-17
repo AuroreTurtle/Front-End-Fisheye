@@ -14,7 +14,6 @@ async function displayMedia(medias) {
 
     medias.forEach((media) => {
         const mediaModel = mediaFactory(media);
-        // console.log(mediaModel.photographerId);
         const profile = getPhotographerId();
         if (mediaModel.photographerId === profile) {
             const mediaCardDOM = mediaModel.getMediaCardDOM();
@@ -30,7 +29,6 @@ async function displayLightbox(medias) {
     for (const element in medias) {
         if (medias[element].photographerId === profile) {
             listeElement.push(medias[element]);
-            // console.log(listeElement);
         }
     }
 
@@ -52,12 +50,12 @@ async function displayLightbox(medias) {
 
 // Like
 function like(medias) {
-    const likes = document.querySelectorAll(".coeur");
+    const likes = document.querySelectorAll(".like");
 
     likes.forEach((element) => {
         element.addEventListener("click", (e) => {
-            let nbrLikes = element.querySelector(".coeur-nombre");
-            let likestot = document.querySelector(".like-tot");
+            let nbrLikes = element.querySelector(".like_number");
+            let likestot = document.querySelector(".like_tot");
             const mediaID = e.target.closest("article").querySelector(".galery-media").getAttribute("data-id");
             const mediaLikes = medias.find((element) => element.id == mediaID);
 
@@ -78,8 +76,8 @@ function like(medias) {
     likes.forEach((element) => {
         element.addEventListener("keydown", (e) => {
             if (e.key == "Enter") {
-                let nbrLikes = element.querySelector(".coeur-nombre");
-                let likestot = document.querySelector(".like-tot");
+                let nbrLikes = element.querySelector(".like_number");
+                let likestot = document.querySelector(".like_tot");
                 const mediaID = e.target.closest("article").querySelector(".galery-media").getAttribute("data-id");
                 const mediaLikes = medias.find((element) => element.id == mediaID);
 
@@ -115,7 +113,7 @@ function likeTot(medias) {
         totalLike += parseInt(element.likes);
     });
 
-    document.querySelector(".like-tot").textContent = totalLike;
+    document.querySelector(".like_tot").textContent = totalLike;
 }
 
 // Tri
@@ -210,7 +208,6 @@ async function displayProfile(photographers) {
     // a améliorer
     photographers.forEach((photographer) => {
         const profileModel = profileFactory(photographer);
-        // console.log(profileModel.id);
         const profile = getPhotographerId();
         if (profileModel.id === profile) {
             profileModel.getProfileCardDOM();

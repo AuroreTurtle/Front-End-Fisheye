@@ -30,14 +30,14 @@ function profileFactory(data) {
         const divInfo = document.createElement("div");
         divInfo.className = "info";
         const pPrix = document.createElement("p");
-        pPrix.className = "info-prix";
+        pPrix.className = "info_price";
         pPrix.textContent = `${price}€/jour`;
 
         const coeur = document.createElement("span");
-        coeur.className = "info-like";
+        coeur.className = "info_like";
         coeur.setAttribute("data-id", id);
         const like = document.createElement("p");
-        like.className = "like-tot";
+        like.className = "like_tot";
 
         const iconeCoeur = document.createElement("i");
         iconeCoeur.className = "fa-solid fa-heart";

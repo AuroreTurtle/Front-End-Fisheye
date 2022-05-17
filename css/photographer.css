@@ -135,18 +135,18 @@ li.selected {
     padding: 1%;
 }
 
-.info-prix {
+.info_price {
     font-size: 24px;
     font-weight: 500;
     color: #000000;
     margin: 0;
 }
 
-.info-like{
+.info_like{
     display: flex;
 }
 
-.like-tot {
+.like_tot {
     font-size: 24px;
     margin: 0;
 }
@@ -185,16 +185,16 @@ li.selected {
     font-size: 24px;
 }
 
-.info-media .titre {
+.info-media .title {
     margin: 0;
     width: 75%;
 }
 
-.coeur {
+.like {
     display: flex;
 }
 
-.coeur-nombre {
+.like_number {
     margin: 0;
 }
 
@@ -323,7 +323,7 @@ form textarea {
     display: flex;
 }
 
-.lightbox__content {
+.lightbox_content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -340,8 +340,8 @@ form textarea {
     color: #901c1c;
 }
 
-.lightbox__next,
-.lightbox__prev {
+.lightbox_next,
+.lightbox_prev {
     width: 50px;
     height: 100%;
     top: 0;
@@ -350,29 +350,29 @@ form textarea {
     font-size: 50px;
 }
 
-.lightbox__prev {
+.lightbox_prev {
     right: auto;
     left: 5%;
 }
 
-.lightbox__close {
+.lightbox_close {
     font-size: 45px;
     top: 10px;
     right: 5%;
     z-index: 10;
 }
 
-.lightbox__image,
-.lightbox__video {
+.lightbox_image,
+.lightbox_video {
     width: 100%;
     height: 750px;
 }
 
-.lightbox__video:focus {
+.lightbox_video:focus {
     border: none;
 }
 
-.lightbox__titre {
+.lightbox_title {
     color: #901c1c;
     font-size: 24px;
     margin: 0;
