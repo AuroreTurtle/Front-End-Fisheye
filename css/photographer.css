@@ -47,6 +47,81 @@
     font-size: 18px;
 }
 
+/* Tri */
+#listbox {
+    width: 450px;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#listbox_label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.select {
+    width: 370px;
+}
+
+.listbox_btn,
+.options li {
+    font-family: "DM Sans", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.listbox_btn {
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 5px 5px 0 0;
+    background-color: #901c1c;
+    color: white;
+    justify-content: space-between;
+}
+
+.listbox_btn .fa-angle-down {
+    font-size: 28px;
+    transition: transform 0.3s linear;
+}
+
+#listbox.active .fa-angle-down {
+    transform: rotate(180deg);
+}
+
+.content {
+    display: none;
+    padding: 1px 10px 0 10px;
+    border-radius: 0 0 5px 5px;
+    background-color: #901c1c;
+}
+
+#listbox.active .content {
+    display: block;
+}
+
+.content .options {
+    margin-top: 10px;
+    padding-inline-start: 0;
+}
+
+.options li {
+    height: 30px;
+    padding: 10px 0 10px 0;
+    color: white;
+}
+
+li:nth-child(2) {
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.options li:hover,
+li.selected {
+    background-color: #cc4444d8;
+}
+
 /* En bas de la page : nombre de likes et prix journalier */
 .info {
     display: flex;
@@ -85,7 +160,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 10%;
+    margin-top: 4%;
     margin-left: 100px;
     margin-right: 100px;
 }

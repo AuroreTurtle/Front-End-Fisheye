@@ -51,7 +51,7 @@ async function displayLightbox(medias) {
 }
 
 // Like
-async function like(medias) {
+function like(medias) {
     const likes = document.querySelectorAll(".coeur");
 
     likes.forEach((element) => {
@@ -99,7 +99,7 @@ async function like(medias) {
     });
 }
 
-async function likeTot(medias) {
+function likeTot(medias) {
     const profile = getPhotographerId();
 
     let like = [];
@@ -118,6 +118,94 @@ async function likeTot(medias) {
     document.querySelector(".like-tot").textContent = totalLike;
 }
 
+// Tri
+function sort(media) {
+    let getSelect = document.getElementById("select_option");
+    getSelect.addEventListener("click", (e) => {
+        if (e.target.dataset.sort == "Popularité") {
+            sortPopular(media);
+        } else if (e.target.dataset.sort == "Date") {
+            sortDate(media);
+        } else if (e.target.dataset.sort == "Titre") {
+            sortTitle(media);
+        } else {
+            console.log("Not found");
+        }
+    });
+
+    getSelect.addEventListener("keydown", (e) => {
+        if (e.key == "Enter") {
+            if (e.target.dataset.sort == "Popularité") {
+                e.target.classList.add("selected");
+                updateName(e.target);
+                sortPopular(media);
+            } else if (e.target.dataset.sort == "Date") {
+                e.target.classList.add("selected");
+                updateName(e.target);
+                sortDate(media);
+            } else if (e.target.dataset.sort == "Titre") {
+                e.target.classList.add("selected");
+                updateName(e.target);
+                sortTitle(media);
+            } else {
+                console.log("Not found");
+            }
+        }
+    });
+}
+
+function sortPopular(media) {
+    media.sort(function (a, b) {
+        if (a.likes < b.likes) {
+            return 1;
+        }
+        if (a.likes > b.likes) {
+            return -1;
+        }
+        return 0;
+    });
+    const galery = document.querySelector(".galery");
+    galery.innerHTML = "";
+    displayMedia(media);
+    displayLightbox(media);
+    like(media);
+}
+
+function sortDate(media) {
+    media.sort(function (a, b) {
+        if (a.date < b.date) {
+            return 1;
+        }
+        if (a.date > b.date) {
+            return -1;
+        }
+        return 0;
+    });
+    const galery = document.querySelector(".galery");
+    galery.innerHTML = "";
+    displayMedia(media);
+    displayLightbox(media);
+    like(media);
+}
+
+function sortTitle(media) {
+    media.sort(function (a, b) {
+        if (a.title > b.title) {
+            return 1;
+        }
+        if (a.title < b.title) {
+            return -1;
+        }
+        return 0;
+    });
+    const galery = document.querySelector(".galery");
+    galery.innerHTML = "";
+    displayMedia(media);
+    displayLightbox(media);
+    like(media);
+}
+
+// Afficher Profile
 async function displayProfile(photographers) {
     // a améliorer
     photographers.forEach((photographer) => {
@@ -137,6 +225,7 @@ async function init() {
     like(media);
     displayProfile(photographers);
     likeTot(media);
+    sort(media);
 }
 
 init();
