@@ -1,0 +1,28 @@
+{
+    "name": "front-end-fisheye",
+    "version": "1.0.0",
+    "description": "Ce projet a été réalisé en avril 2022 lors de ma formation de développeur front-end chez OpenClassrooms.",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint . --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AuroreTurtle/Front-End-Fisheye.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AuroreTurtle/Front-End-Fisheye/issues"
+    },
+    "homepage": "https://github.com/AuroreTurtle/Front-End-Fisheye#readme",
+    "devDependencies": {
+        "eslint": "^8.15.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.6.2"
+    }
+}

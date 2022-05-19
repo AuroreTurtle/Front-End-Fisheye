@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
         <link
@@ -32,35 +33,34 @@
                 </button>
             </div>
 
-            <!-- Tri-->
-        <div id="listbox">
-            <label id="listbox_label" for="listbox-container">Trier par
-                <div id="listbox-container" class="select">
-                    <div class="listbox_btn" role="button" aria-haspopup="listbox" tabindex="0" aria-expanded="false">
-                        <span id="listbox-current-option">Popularité</span>
-                        <i class="fa-solid fa-angle-down"></i>
-                        
-                    </div>
-                        <div class="content"  role="listbox"
-                            aria-labelledby="listbox_label"
-                            aria-activedescendant="listbox-popularity">
-                            <ul class="options" role="listbox" id="select_option">
-                                <li> Popularité </li>
-                                <li> Date </li>
-                                <li> Titre </li>
-                            </ul>
+            <!-- Sort-->
+            <div id="listbox">
+                <label id="listbox_label" for="listbox-container">Trier par</label>
+                    <div id="listbox-container" class="select">
+                        <div class="listbox_btn" role="button" aria-haspopup="listbox" tabindex="0" 
+                        aria-expanded="false">
+                            <span>Popularité</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                
                         </div>
-                    </div>
-                </div>
-            </label>
-        </div>
+                            <div class="content"  role="listbox"
+                                aria-labelledby="listbox_label">
+                                <ul class="options" role="listbox" id="select_option">
+                                    <li> Popularité </li>
+                                    <li> Date </li>
+                                    <li> Titre </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+            </div>
 
 
-            <!--Gallerie d'image-->
-            <section class="galery"></section>
+            <!--Gallery of images-->
+            <section class="gallery"></section>
         </main>
 
-        <!--Formulaire-->
+        <!--Form-->
         <div id="contact_modal" aria-hidden="true">
             <div class="modal" aria-labelledby="Contact">
                 <header>
@@ -71,17 +71,17 @@
                         src="assets/icons/close.svg"
                         onclick="closeModal()"
                         alt="Close Contact form"
-                        aria-label="Fermer"
+                        aria-label="Close"
                     />
                 </header>
                 <form name="contact">
                     <div>
-                        <label for="firstname" id="First name">Prénom</label>
+                        <label for="firstname" id="Firstname">Prénom</label>
                         <input
                             type="text"
                             id="firstname"
                             name="firstname"
-                            aria-labelledby="First name"
+                            aria-labelledby="Firstname"
                             aria-required="true"
                         />
                         <p class="message-error">
@@ -90,12 +90,12 @@
                     </div>
 
                     <div>
-                        <label for="lastname" id="Last name">Nom</label>
+                        <label for="lastname" id="Lastname">Nom</label>
                         <input
                             type="text"
                             id="lastname"
                             name="lastname"
-                            aria-labelledby="Last name"
+                            aria-labelledby="Lastname"
                             aria-required="true"
                         />
                         <p class="message-error">
@@ -116,14 +116,14 @@
                     </div>
 
                     <div>
-                        <label for="message" id="Your message">
+                        <label for="message" id="Your-message">
                             Votre message
                         </label>
                         <textarea
                             id="message"
                             name="message"
                             rows="7"
-                            aria-labelledby="Your message"
+                            aria-labelledby="Your-message"
                             aria-required="true"
                         ></textarea>
                         <p class="message-error">
@@ -149,7 +149,7 @@
                 </button>
 
                 <div>
-                    <img class="lightbox_image" />
+                    <img class="lightbox_image" alt=""/>
                     <video controls autoplay class="lightbox_video">
                         <track />
                     </video>

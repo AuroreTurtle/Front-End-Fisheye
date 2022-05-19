@@ -2,7 +2,7 @@
     margin-left: 7px;
 }
 
-.fa-heart::before{
+.fa-heart::before {
     font-size: 26px;
 }
 
@@ -24,22 +24,15 @@
     width: 200px;
 }
 
-.info-profile {
-    justify-self: flex-start;
-    width: 40%;
-}
-
 .info-profile h1 {
     color: #d3573c;
     font-size: 64px;
-    line-height: 83px;
     margin: 0;
 }
 
 .info-profile h2 {
     color: #901c1c;
     font-size: 24px;
-    line-height: 31px;
     margin: 2% 0 2% 0;
 }
 
@@ -47,15 +40,43 @@
     font-size: 18px;
 }
 
-/* Tri */
+/* En bas de la page : nombre de likes et prix journalier */
+.info {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #db8876;
+    border-radius: 5px;
+    width: 350px;
+    padding: 1%;
+}
+
+.info_price {
+    font-size: 24px;
+    margin: 0;
+}
+
+.info_like {
+    display: flex;
+}
+
+.like_tot {
+    font-size: 24px;
+    margin: 0;
+}
+
+.info .fa-heart {
+    font-size: 24px;
+}
+
+/* Sort */
 #listbox {
     width: 450px;
     margin-left: 100px;
     margin-top: 20px;
     font-size: 18px;
-}
-
-#listbox_label {
     display: flex;
     justify-content: space-between;
 }
@@ -103,7 +124,8 @@
 
 .content .options {
     margin-top: 10px;
-    padding-inline-start: 0;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
 }
 
 .options li {
@@ -122,41 +144,8 @@ li.selected {
     background-color: #cc4444d8;
 }
 
-/* En bas de la page : nombre de likes et prix journalier */
-.info {
-    display: flex;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    background-color: #db8876;
-    border-radius: 5px;
-    width: 350px;
-    padding: 1%;
-}
-
-.info_price {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000000;
-    margin: 0;
-}
-
-.info_like{
-    display: flex;
-}
-
-.like_tot {
-    font-size: 24px;
-    margin: 0;
-}
-
-.info .fa-heart {
-    font-size: 24px;
-}
-
-/* Galerie d'image */
-.galery {
+/* Gallery of images */
+.gallery {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -165,16 +154,17 @@ li.selected {
     margin-right: 100px;
 }
 
-.galery article {
+.gallery article {
     width: 360px;
     height: 310px;
     margin-bottom: 10%;
 }
 
-.galery-media {
+.gallery-media {
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -198,7 +188,7 @@ li.selected {
     margin: 0;
 }
 
-/* Modale et form */
+/* Modale and form */
 *:focus {
     border: 5px solid #d3573c;
 }
@@ -243,7 +233,6 @@ button:focus {
     width: 45%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
@@ -261,15 +250,14 @@ button:focus {
 .modal header h2 {
     font-size: 64px;
     font-weight: normal;
-    text-align: center;
+    margin-bottom: 3%;
 }
 
 form {
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 form label {
@@ -278,10 +266,7 @@ form label {
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: self-start;
     margin-bottom: 26px;
 }
 
@@ -325,10 +310,7 @@ form textarea {
 
 .lightbox_content {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
     width: 70%;
 }
 
