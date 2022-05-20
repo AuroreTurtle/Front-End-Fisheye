@@ -23,8 +23,7 @@ class Lightbox {
    */
   next() {
     const index = this.listeElement.findIndex(
-      // eslint-disable-next-line eqeqeq
-      (element) => element.id == this.currentElement.id
+      (element) => element.id === this.currentElement.id
     );
     if (index === this.listeElement.length - 1) {
       // eslint-disable-next-line prefer-destructuring
@@ -41,8 +40,7 @@ class Lightbox {
    */
   previous() {
     const index = this.listeElement.findIndex(
-      // eslint-disable-next-line eqeqeq
-      (element) => element.id == this.currentElement.id
+      (element) => element.id === this.currentElement.id
     );
 
     if (index === 0) {
@@ -91,8 +89,7 @@ class Lightbox {
   }
 
   getElementById(id) {
-    // eslint-disable-next-line eqeqeq
-    return this.listeElement.find((element) => element.id == id);
+    return this.listeElement.find((element) => element.id === parseInt(id, 10));
   }
 
   /**

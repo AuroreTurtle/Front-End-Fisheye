@@ -86,8 +86,7 @@ function like(medias) {
         .closest("article")
         .querySelector(".gallery-media")
         .getAttribute("data-id");
-      // eslint-disable-next-line eqeqeq
-      const mediaLikes = medias.find((el) => el.id == mediaID);
+      const mediaLikes = medias.find((el) => el.id === parseInt(mediaID, 10));
 
       if (mediaLikes.like === "liked") {
         nbrLikes.textContent--;
@@ -112,8 +111,7 @@ function like(medias) {
           .closest("article")
           .querySelector(".gallery-media")
           .getAttribute("data-id");
-        // eslint-disable-next-line eqeqeq
-        const mediaLikes = medias.find((el) => el.id == mediaID);
+        const mediaLikes = medias.find((el) => el.id === parseInt(mediaID, 10));
 
         if (mediaLikes.like === "liked") {
           nbrLikes.textContent--;
