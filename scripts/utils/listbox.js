@@ -6,10 +6,12 @@ const choices = ["Popularité", "Date", "Titre"];
 
 listboxBtn.addEventListener("click", () => {
   listbox.classList.toggle("active");
+  listboxBtn.setAttribute("aria-expanded", "true");
 });
 listboxBtn.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     listbox.classList.toggle("active");
+    listboxBtn.setAttribute("aria-expanded", "true");
   }
 });
 
@@ -36,6 +38,7 @@ function addChoice(selectedChoice) {
 function updateName(selectedLi) {
   addChoice(selectedLi.innerText);
   listbox.classList.remove("active");
+  listboxBtn.setAttribute("aria-expanded", "false");
   listboxBtn.firstElementChild.innerText = selectedLi.innerText;
 }
 

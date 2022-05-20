@@ -73,7 +73,7 @@
 
 /* Sort */
 #listbox {
-    width: 450px;
+    width: 340px;
     margin-left: 100px;
     margin-top: 20px;
     font-size: 18px;
@@ -81,8 +81,12 @@
     justify-content: space-between;
 }
 
+#listbox label {
+    font-weight: 700;
+}
+
 .select {
-    width: 370px;
+    width: 200px;
 }
 
 .listbox_btn,
@@ -129,7 +133,7 @@
 }
 
 .options li {
-    height: 30px;
+    height: 40px;
     padding: 10px 0 10px 0;
     color: white;
 }
@@ -146,23 +150,23 @@ li.selected {
 
 /* Gallery of images */
 .gallery {
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
     flex-wrap: wrap;
+    gap: 5%;
     margin-top: 4%;
     margin-left: 100px;
     margin-right: 100px;
 }
 
 .gallery article {
-    width: 360px;
-    height: 310px;
-    margin-bottom: 10%;
+    width: 370px;
+    height: 350px;
+    margin-bottom: 5%;
 }
 
 .gallery-media {
     width: 100%;
-    height: 100%;
+    height: 90%;
     border-radius: 5px;
     -o-object-fit: cover;
     object-fit: cover;

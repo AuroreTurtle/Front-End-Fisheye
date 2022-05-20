@@ -53,6 +53,7 @@ function mediaFactory(data) {
     const iconeCoeur = document.createElement("i");
     iconeCoeur.className = "fa-solid fa-heart";
     iconeCoeur.setAttribute("aria-label", "likes");
+    iconeCoeur.setAttribute("role", "button");
 
     article.appendChild(div);
     div.appendChild(titre);
