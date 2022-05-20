@@ -14,6 +14,7 @@ function profileFactory(data) {
     const profile = document.querySelector(".photograph-header");
     const button = document.querySelector(".contact_button");
 
+    // Photographer's picture
     const divImage = document.createElement("div");
     divImage.className = "info-image";
     const img = document.createElement("img");
@@ -23,22 +24,27 @@ function profileFactory(data) {
     const divProfile = document.createElement("div");
     divProfile.className = "info-profile";
 
+    // Photographer's name
     const h1 = document.createElement("h1");
     h1.textContent = name;
 
+    // Photographer's place
     const h2 = document.createElement("h2");
     h2.textContent = `${city}, ${country}`;
 
+    // Tag
     const pTag = document.createElement("p");
     pTag.className = "tag";
     pTag.textContent = tagline;
 
     const divInfo = document.createElement("div");
     divInfo.className = "info";
+    // Price
     const pPrix = document.createElement("p");
     pPrix.className = "info_price";
     pPrix.textContent = `${price}€/jour`;
 
+    // Like
     const coeur = document.createElement("span");
     coeur.className = "info_like";
     coeur.setAttribute("data-id", id);
