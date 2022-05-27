@@ -18,6 +18,7 @@ function mediaFactory(data) {
       const photos = document.createElement("img");
       photos.setAttribute("src", imageLien);
       photos.setAttribute("alt", title);
+      photos.setAttribute("loading", "lazy");
       photos.className = "gallery-media";
       photos.setAttribute("data-id", id);
       photos.setAttribute("tabindex", "0");

@@ -43,16 +43,16 @@ async function displayMedia(medias) {
 async function displayLightbox(medias) {
   const profile = getPhotographerId();
 
-  const listeElement = [];
+  const listItem = [];
   // eslint-disable-next-line no-restricted-syntax
   for (const element in medias) {
     if (medias[element].photographerId === profile) {
-      listeElement.push(medias[element]);
+      listItem.push(medias[element]);
     }
   }
 
   // eslint-disable-next-line no-undef
-  const lightbox = new Lightbox(listeElement);
+  const lightbox = new Lightbox(listItem);
 
   document.querySelectorAll(".gallery .gallery-media").forEach((mediaDom) => {
     mediaDom.addEventListener("click", (e) => {
@@ -75,13 +75,13 @@ async function displayLightbox(medias) {
  * decrements the number of likes of the corresponding media
  * @param medias - an array of objects containing the data of the medias
  */
-function like(medias) {
+function countLike(medias) {
   const likes = document.querySelectorAll(".like");
 
   likes.forEach((element) => {
     element.addEventListener("click", (e) => {
-      const nbrLikes = element.querySelector(".like_number");
-      const likesTot = document.querySelector(".like_tot");
+      const numberLikes = element.querySelector(".like_number");
+      const likesTotal = document.querySelector(".like_total");
       const mediaID = e.target
         .closest("article")
         .querySelector(".gallery-media")
@@ -89,13 +89,13 @@ function like(medias) {
       const mediaLikes = medias.find((el) => el.id === parseInt(mediaID, 10));
 
       if (mediaLikes.like === "liked") {
-        nbrLikes.textContent--;
+        numberLikes.textContent--;
         mediaLikes.likes--;
         mediaLikes.like = "";
-        likesTot.textContent--;
+        likesTotal.textContent--;
       } else {
-        nbrLikes.textContent++;
-        likesTot.textContent++;
+        numberLikes.textContent++;
+        likesTotal.textContent++;
         mediaLikes.likes++;
         mediaLikes.like = "liked";
       }
@@ -105,8 +105,8 @@ function like(medias) {
   likes.forEach((element) => {
     element.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
-        const nbrLikes = element.querySelector(".like_number");
-        const likesTot = document.querySelector(".like_tot");
+        const numberLikes = element.querySelector(".like_number");
+        const likesTotal = document.querySelector(".like_total");
         const mediaID = e.target
           .closest("article")
           .querySelector(".gallery-media")
@@ -114,13 +114,13 @@ function like(medias) {
         const mediaLikes = medias.find((el) => el.id === parseInt(mediaID, 10));
 
         if (mediaLikes.like === "liked") {
-          nbrLikes.textContent--;
+          numberLikes.textContent--;
           mediaLikes.likes--;
           mediaLikes.like = "";
-          likesTot.textContent--;
+          likesTotal.textContent--;
         } else {
-          nbrLikes.textContent++;
-          likesTot.textContent++;
+          numberLikes.textContent++;
+          likesTotal.textContent++;
           mediaLikes.likes++;
           mediaLikes.like = "liked";
         }
@@ -150,7 +150,7 @@ function likeTotal(medias) {
     totalLike += parseInt(element.likes, 10);
   });
 
-  document.querySelector(".like_tot").textContent = totalLike;
+  document.querySelector(".like_total").textContent = totalLike;
 }
 
 // Tri
@@ -173,7 +173,7 @@ function sortPopular(media) {
   gallery.innerHTML = "";
   displayMedia(media);
   displayLightbox(media);
-  like(media);
+  countLike(media);
 }
 
 /**
@@ -194,7 +194,7 @@ function sortDate(media) {
   gallery.innerHTML = "";
   displayMedia(media);
   displayLightbox(media);
-  like(media);
+  countLike(media);
 }
 
 /**
@@ -216,16 +216,16 @@ function sortTitle(media) {
   gallery.innerHTML = "";
   displayMedia(media);
   displayLightbox(media);
-  like(media);
+  countLike(media);
 }
 
 /**
  * It sorts the media by popularity, date or title
  * @param media - the array of objects to sort
  */
-function sort(media) {
-  const getSelect = document.getElementById("select_option");
-  getSelect.addEventListener("click", (e) => {
+function sortMedia(media) {
+  const getSelection = document.getElementById("select_option");
+  getSelection.addEventListener("click", (e) => {
     if (e.target.dataset.sort === "Popularité") {
       sortPopular(media);
     } else if (e.target.dataset.sort === "Date") {
@@ -237,7 +237,7 @@ function sort(media) {
     }
   });
 
-  getSelect.addEventListener("keydown", (e) => {
+  getSelection.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       if (e.target.dataset.sort === "Popularité") {
         e.target.classList.add("selected");
@@ -280,17 +280,18 @@ async function displayProfile(photographers) {
 }
 
 /**
- * The function is an async function that calls the getData function and then displays the
- * profile, media, lightbox, likes, and sorts the media.
+ * The function is an async function that calls the getData function. The function then calls the
+ * displayProfile, displayMedia, displayLightbox, countLike, likeTotal, and sortMedia functions, passing
+ * in the media array as an argument
  */
 async function init() {
   const { media, photographers } = await getData();
   displayProfile(photographers);
   displayMedia(media);
   displayLightbox(media);
-  like(media);
+  countLike(media);
   likeTotal(media);
-  sort(media);
+  sortMedia(media);
 }
 
 init();

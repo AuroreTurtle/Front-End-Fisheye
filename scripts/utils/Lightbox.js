@@ -98,14 +98,14 @@ class Lightbox {
   display() {
     const image = document.querySelector(".lightbox_image");
     const video = document.querySelector(".lightbox_video");
-    const titre = document.querySelector(".lightbox_title");
+    const titleMedia = document.querySelector(".lightbox_title");
 
     if (this.currentElement.image) {
       video.style.display = "none";
       image.style.display = "block";
       image.src = `assets/photos/${this.currentElement.photographerId}/${this.currentElement.image}`;
       image.setAttribute("alt", this.currentElement.title);
-      titre.innerHTML = this.currentElement.title;
+      titleMedia.innerHTML = this.currentElement.title;
       document.querySelector(".lightbox").classList.add("show");
     } else {
       video.style.display = "block";
@@ -123,7 +123,7 @@ class Lightbox {
       document
         .querySelector(".lightbox_video track")
         .setAttribute("kind", "captions");
-      titre.innerHTML = this.currentElement.title;
+      titleMedia.innerHTML = this.currentElement.title;
       document.querySelector(".lightbox").classList.add("show");
     }
   }

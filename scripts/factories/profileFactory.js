@@ -49,7 +49,7 @@ function profileFactory(data) {
     coeur.className = "info_like";
     coeur.setAttribute("data-id", id);
     const like = document.createElement("p");
-    like.className = "like_tot";
+    like.className = "like_total";
 
     const iconeCoeur = document.createElement("i");
     iconeCoeur.className = "fa-solid fa-heart";

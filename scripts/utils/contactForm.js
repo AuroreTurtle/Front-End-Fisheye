@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
-/* eslint-disable no-plusplus */
 const modal = document.getElementById("contact_modal");
-const titre = document.querySelector("#Contact");
+const title = document.querySelector("#Contact");
 
 // Elements focusables
 const focusableSelector = "input, textarea, button";
@@ -10,20 +9,20 @@ let focusables = [];
 let previousFocusElement = null;
 
 // For the firstname
-const prenom = document.forms.contact.elements.firstname;
-const erreurPrenom = prenom.nextElementSibling;
+const inputFirstname = document.forms.contact.elements.firstname;
+const errorFirstname = inputFirstname.nextElementSibling;
 
 // For the lastname
-const nom = document.forms.contact.elements.lastname;
-const erreurNom = nom.nextElementSibling;
+const inputLastname = document.forms.contact.elements.lastname;
+const errorLastname = inputLastname.nextElementSibling;
 
 // For the email
-const mail = document.forms.contact.elements.email;
-const erreurMail = mail.nextElementSibling;
+const inputEmail = document.forms.contact.elements.email;
+const errorEmail = inputEmail.nextElementSibling;
 
 // For the message
 const { message } = document.forms.contact.elements;
-const erreurMessage = message.nextElementSibling;
+const errorMessage = message.nextElementSibling;
 
 /// //////////////////////////////////////////////////////////////////
 
@@ -62,7 +61,7 @@ async function getNamePhotograph() {
         `Contact me ${photographer.name}`
       );
 
-      titre.setAttribute("id", `Contact me ${photographer.name}`);
+      title.setAttribute("id", `Contact me ${photographer.name}`);
 
       document.getElementById("nom-photographe").innerHTML = photographer.name;
     }
@@ -85,9 +84,9 @@ function focusInModal(e) {
   );
   modal.querySelectorAll(focusableSelector)[0].focus();
   if (e.shiftKey === true) {
-    index--;
+    index -= 1;
   } else {
-    index++;
+    index += 1;
   }
 
   if (index >= focusables.length) {
@@ -163,50 +162,56 @@ function validate(e) {
   let formValidate = true;
 
   // Regex
-  const newRegex = /^[A-Za-z\u00C0-\u00FF]+[ \-']?[[A-Za-z\u00C0-\u00FF]+$/;
+  const nameRegex = /^[A-Za-z\u00C0-\u00FF]+[ \-']?[[A-Za-z\u00C0-\u00FF]+$/;
   const mailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
-  if (prenom.value.length < 2 || newRegex.test(prenom.value) === false) {
-    prenom.style.border = "3px solid red";
+  if (
+    inputFirstname.value.length < 2 ||
+    nameRegex.test(inputFirstname.value) === false
+  ) {
+    inputFirstname.style.border = "3px solid red";
     formValidate = false;
-    erreurPrenom.style.display = "block";
-    prenom.setAttribute("aria-invalid", true);
+    errorFirstname.style.display = "block";
+    inputFirstname.setAttribute("aria-invalid", true);
   } else {
-    prenom.style.border = "3px solid green";
-    erreurPrenom.style.display = "none";
-    prenom.setAttribute("aria-invalid", false);
+    inputFirstname.style.border = "3px solid green";
+    errorFirstname.style.display = "none";
+    inputFirstname.setAttribute("aria-invalid", false);
   }
 
-  if (nom.value.length < 2 || newRegex.test(nom.value) === false) {
-    nom.style.border = "3px solid red";
+  if (
+    inputLastname.value.length < 2 ||
+    nameRegex.test(inputLastname.value) === false
+  ) {
+    inputLastname.style.border = "3px solid red";
     formValidate = false;
-    erreurNom.style.display = "block";
-    nom.setAttribute("aria-invalid", true);
+    errorLastname.style.display = "block";
+    inputLastname.setAttribute("aria-invalid", true);
   } else {
-    nom.style.border = "3px solid green";
-    erreurNom.style.display = "none";
-    nom.setAttribute("aria-invalid", false);
+    inputLastname.style.border = "3px solid green";
+    errorLastname.style.display = "none";
+    inputLastname.setAttribute("aria-invalid", false);
   }
 
-  if (mail.value === "" || mailRegex.test(mail.value) === false) {
-    mail.style.border = "3px solid red";
+  if (inputEmail.value === "" || mailRegex.test(inputEmail.value) === false) {
+    inputEmail.style.border = "3px solid red";
     formValidate = false;
-    erreurMail.style.display = "block";
-    mail.setAttribute("aria-invalid", true);
+    errorEmail.style.display = "block";
+    inputEmail.setAttribute("aria-invalid", true);
   } else {
-    mail.style.border = "3px solid green";
-    erreurMail.style.display = "none";
-    mail.setAttribute("aria-invalid", false);
+    inputEmail.style.border = "3px solid green";
+    errorEmail.style.display = "none";
+    inputEmail.setAttribute("aria-invalid", false);
   }
 
   if (message.value.length < 10) {
     message.style.border = "3px solid red";
     formValidate = false;
-    erreurMessage.style.display = "block";
+    errorMessage.style.display = "block";
     message.setAttribute("aria-invalid", true);
   } else {
     message.style.border = "3px solid green";
-    erreurMessage.style.display = "none";
+    errorMessage.style.display = "none";
     message.setAttribute("aria-invalid", false);
   }
 
@@ -217,14 +222,14 @@ function validate(e) {
  * It resets the form
  */
 function initialise() {
-  prenom.value = "";
-  prenom.style.border = "none";
+  inputFirstname.value = "";
+  inputFirstname.style.border = "none";
 
-  nom.value = "";
-  nom.style.border = "none";
+  inputLastname.value = "";
+  inputLastname.style.border = "none";
 
-  mail.value = "";
-  mail.style.border = "none";
+  inputEmail.value = "";
+  inputEmail.style.border = "none";
 
   message.value = "";
   message.style.border = "none";
@@ -236,9 +241,9 @@ the function calls the validate function, and if the form is valid, it logs the 
 fields to the console, calls the initialise function to reset the form, and closes the modal. */
 document.querySelector("form").addEventListener("submit", (e) => {
   if (validate(e)) {
-    console.log(`Prénom : ${prenom.value}`);
-    console.log(`Nom : ${nom.value}`);
-    console.log(`Mail : ${mail.value}`);
+    console.log(`Prénom : ${inputFirstname.value}`);
+    console.log(`Nom : ${inputLastname.value}`);
+    console.log(`Mail : ${inputEmail.value}`);
     console.log(`Message : ${message.value}`);
     initialise();
 

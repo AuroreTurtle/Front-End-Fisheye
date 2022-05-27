@@ -62,7 +62,7 @@
     display: flex;
 }
 
-.like_tot {
+.like_total {
     font-size: 24px;
     margin: 0;
 }
@@ -131,7 +131,7 @@
 .content .options {
     margin-top: 10px;
     -webkit-padding-start: 0;
-            padding-inline-start: 0;
+    padding-inline-start: 0;
 }
 
 .options li {
@@ -224,7 +224,7 @@ button:focus {
 #contact_modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     height: 100%;
