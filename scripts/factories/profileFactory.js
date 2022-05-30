@@ -20,6 +20,7 @@ function profileFactory(data) {
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.setAttribute("alt", name);
+    img.setAttribute("srcset", `assets/photographers/light/${portrait}`);
 
     const divProfile = document.createElement("div");
     divProfile.className = "info-profile";

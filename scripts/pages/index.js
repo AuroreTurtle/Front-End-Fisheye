@@ -1,9 +1,11 @@
+/* global photographerFactory  */
+/* eslint no-undef: "error" */
+
 /**
  * It fetches the JSON file, and returns the JSON data.
  * @returns a promise.
  */
 async function getPhotographers() {
-  // utilisation de await car fonction async
   const photographers = await fetch("./data/photographers.json");
   return photographers.json();
 }
@@ -17,7 +19,6 @@ async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
 
   photographers.forEach((photographer) => {
-    // eslint-disable-next-line no-undef
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
