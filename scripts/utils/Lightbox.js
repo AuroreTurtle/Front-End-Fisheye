@@ -54,6 +54,7 @@ class Lightbox {
   // eslint-disable-next-line class-methods-use-this
   close() {
     document.querySelector(".lightbox").classList.remove("show");
+    document.querySelector(".gallery-media").focus();
   }
 
   /**
@@ -98,32 +99,26 @@ class Lightbox {
   display() {
     const image = document.querySelector(".lightbox_image");
     const video = document.querySelector(".lightbox_video");
+    video.innerHTML = `<track default src="assets/photos/${this.currentElement.photographerId}/track.vtt" kind="captions" />`;
     const titleMedia = document.querySelector(".lightbox_title");
 
     if (this.currentElement.image) {
       video.style.display = "none";
       image.style.display = "block";
+      image.focus({ preventScroll: true });
+      image.setAttribute("tabindex", "0");
       image.src = `assets/photos/${this.currentElement.photographerId}/${this.currentElement.image}`;
       image.setAttribute("alt", this.currentElement.title);
-      titleMedia.innerHTML = this.currentElement.title;
+      titleMedia.textContent = this.currentElement.title;
+      titleMedia.setAttribute("tabindex", "0");
       document.querySelector(".lightbox").classList.add("show");
     } else {
       video.style.display = "block";
       image.style.display = "none";
+      video.focus({ preventScroll: true });
       video.src = `assets/photos/${this.currentElement.photographerId}/${this.currentElement.video}`;
-      document
-        .querySelector(".lightbox_video track")
-        .setAttribute(
-          "src",
-          `assets/photos/${this.currentElement.photographerId}/track.vtt`
-        );
-      document
-        .querySelector(".lightbox_video track")
-        .setAttribute("default", true);
-      document
-        .querySelector(".lightbox_video track")
-        .setAttribute("kind", "captions");
-      titleMedia.innerHTML = this.currentElement.title;
+      titleMedia.textContent = this.currentElement.title;
+      titleMedia.setAttribute("tabindex", "0");
       document.querySelector(".lightbox").classList.add("show");
     }
   }

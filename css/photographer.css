@@ -60,6 +60,7 @@
 
 .info_like {
     display: flex;
+    margin: 0;
 }
 
 .like_total {
@@ -184,10 +185,13 @@ li.selected {
 .info-media .title {
     margin: 0;
     width: 75%;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .like {
     display: flex;
+    margin: 0;
 }
 
 .like_number {
@@ -357,7 +361,8 @@ form textarea {
     height: 750px;
 }
 
-.lightbox_video:focus {
+.lightbox_video:focus,
+.lightbox_image:focus {
     border: none;
 }
 

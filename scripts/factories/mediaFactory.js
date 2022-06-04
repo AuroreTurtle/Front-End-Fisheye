@@ -43,17 +43,17 @@ function mediaFactory(data) {
     div.className = "info-media";
 
     // Title
-    const titre = document.createElement("p");
+    const titre = document.createElement("h3");
     titre.className = "title";
     titre.setAttribute("tabindex", "0");
     titre.textContent = title;
 
     // Like
-    const coeur = document.createElement("span");
+    const coeur = document.createElement("p");
     coeur.className = "like";
     coeur.setAttribute("data-id", id);
     coeur.setAttribute("tabindex", "0");
-    const like = document.createElement("p");
+    const like = document.createElement("span");
     like.className = "like_number";
     like.setAttribute("data-id", id);
     like.textContent = likes;

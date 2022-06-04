@@ -46,10 +46,10 @@ function profileFactory(data) {
     pPrix.textContent = `${price}€/jour`;
 
     // Like
-    const coeur = document.createElement("span");
+    const coeur = document.createElement("p");
     coeur.className = "info_like";
     coeur.setAttribute("data-id", id);
-    const like = document.createElement("p");
+    const like = document.createElement("span");
     like.className = "like_total";
 
     const iconeCoeur = document.createElement("i");

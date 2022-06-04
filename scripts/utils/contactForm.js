@@ -63,7 +63,8 @@ async function getNamePhotograph() {
 
       title.setAttribute("id", `Contact me ${photographer.name}`);
 
-      document.getElementById("nom-photographe").innerHTML = photographer.name;
+      document.getElementById("name-photographer").innerHTML =
+        photographer.name;
     }
   });
 }
