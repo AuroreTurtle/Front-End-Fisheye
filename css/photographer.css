@@ -255,6 +255,7 @@ button:focus {
 
 .modal header img {
     cursor: pointer;
+    padding-bottom: 5%;
 }
 
 .modal header h2 {
