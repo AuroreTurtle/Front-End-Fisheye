@@ -296,6 +296,7 @@ form textarea {
 
 .message-error {
     display: none;
+    margin-top: 1%;
     margin-bottom: 0;
     font-weight: bold;
     font-size: 18px;

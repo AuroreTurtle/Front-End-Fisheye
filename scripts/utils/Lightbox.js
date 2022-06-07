@@ -51,6 +51,9 @@ class Lightbox {
     this.display();
   }
 
+  /**
+   * When the close button is clicked, remove the class "show" from the lightbox and close the lightbox
+   */
   // eslint-disable-next-line class-methods-use-this
   close() {
     document.querySelector(".lightbox").classList.remove("show");

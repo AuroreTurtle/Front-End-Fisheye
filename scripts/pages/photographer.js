@@ -1,6 +1,5 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
-/* eslint-disable no-plusplus */
 /* global  Lightbox, mediaFactory, updateName, profileFactory */
 /* eslint no-undef: "error" */
 
@@ -90,13 +89,13 @@ function countLike(medias) {
       const mediaLikes = medias.find((el) => el.id === parseInt(mediaID, 10));
 
       if (mediaLikes.like === "liked") {
-        numberLikes.textContent--;
+        numberLikes.textContent = parseInt(numberLikes.textContent, 10) - 1;
         mediaLikes.likes -= 1;
         mediaLikes.like = "";
-        likesTotal.textContent--;
+        likesTotal.textContent = parseInt(likesTotal.textContent, 10) - 1;
       } else {
-        numberLikes.textContent++;
-        likesTotal.textContent++;
+        numberLikes.textContent = parseInt(numberLikes.textContent, 10) + 1;
+        likesTotal.textContent = parseInt(likesTotal.textContent, 10) + 1;
         mediaLikes.likes += 1;
         mediaLikes.like = "liked";
       }
@@ -115,13 +114,13 @@ function countLike(medias) {
         const mediaLikes = medias.find((el) => el.id === parseInt(mediaID, 10));
 
         if (mediaLikes.like === "liked") {
-          numberLikes.textContent--;
+          numberLikes.textContent = parseInt(numberLikes.textContent, 10) - 1;
           mediaLikes.likes -= 1;
           mediaLikes.like = "";
-          likesTotal.textContent--;
+          likesTotal.textContent = parseInt(likesTotal.textContent, 10) - 1;
         } else {
-          numberLikes.textContent++;
-          likesTotal.textContent++;
+          numberLikes.textContent = parseInt(numberLikes.textContent, 10) + 1;
+          likesTotal.textContent = parseInt(likesTotal.textContent, 10) + 1;
           mediaLikes.likes += 1;
           mediaLikes.like = "liked";
         }
